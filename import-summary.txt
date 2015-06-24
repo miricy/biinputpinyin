@@ -1,0 +1,97 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .externalToolBuilders/
+* .externalToolBuilders/org.eclipse.cdt.managedbuilder.core.genmakebuilder (4).launch
+* Android.mk
+* CleanSpec.mk
+* README
+* lib/
+* lib/.svn/
+* lib/.svn/README.txt
+* lib/.svn/dir-wcprops
+* lib/.svn/empty-file
+* lib/.svn/entries
+* lib/.svn/format
+* lib/.svn/prop-base/
+* lib/.svn/prop-base/Android.mk.svn-base
+* lib/.svn/props/
+* lib/.svn/props/Android.mk.svn-work
+* lib/.svn/text-base/
+* lib/.svn/text-base/Android.mk.svn-base
+* lib/.svn/wcprops/
+* lib/.svn/wcprops/Android.mk.svn-work
+* lib/Android.mk
+* lib/net/
+* lib/net/.svn/
+* lib/net/.svn/README.txt
+* lib/net/.svn/dir-wcprops
+* lib/net/.svn/empty-file
+* lib/net/.svn/entries
+* lib/net/.svn/format
+* lib/net/bestidear/
+* lib/net/bestidear/.svn/
+* lib/net/bestidear/.svn/README.txt
+* lib/net/bestidear/.svn/dir-wcprops
+* lib/net/bestidear/.svn/empty-file
+* lib/net/bestidear/.svn/entries
+* lib/net/bestidear/.svn/format
+* lib/net/bestidear/inputmethod/
+* lib/net/bestidear/inputmethod/.svn/
+* lib/net/bestidear/inputmethod/.svn/README.txt
+* lib/net/bestidear/inputmethod/.svn/dir-wcprops
+* lib/net/bestidear/inputmethod/.svn/empty-file
+* lib/net/bestidear/inputmethod/.svn/entries
+* lib/net/bestidear/inputmethod/.svn/format
+* lib/net/bestidear/inputmethod/remote/
+* lib/net/bestidear/inputmethod/remote/.svn/
+* lib/net/bestidear/inputmethod/remote/.svn/README.txt
+* lib/net/bestidear/inputmethod/remote/.svn/dir-wcprops
+* lib/net/bestidear/inputmethod/remote/.svn/empty-file
+* lib/net/bestidear/inputmethod/remote/.svn/entries
+* lib/net/bestidear/inputmethod/remote/.svn/format
+* lib/net/bestidear/inputmethod/remote/.svn/prop-base/
+* lib/net/bestidear/inputmethod/remote/.svn/prop-base/IPinyinDecoderService.aidl.svn-base
+* lib/net/bestidear/inputmethod/remote/.svn/props/
+* lib/net/bestidear/inputmethod/remote/.svn/props/IPinyinDecoderService.aidl.svn-work
+* lib/net/bestidear/inputmethod/remote/.svn/text-base/
+* lib/net/bestidear/inputmethod/remote/.svn/text-base/IPinyinDecoderService.aidl.svn-base
+* lib/net/bestidear/inputmethod/remote/.svn/wcprops/
+* lib/net/bestidear/inputmethod/remote/.svn/wcprops/IPinyinDecoderService.aidl.svn-work
+* lib/net/bestidear/inputmethod/remote/IPinyinDecoderService.aidl
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* assets/ => app/src/main/assets
+* jni/ => app/src/main/jni/
+* libs/armeabi/libjni_bipinyinime.so => app/src/main/jniLibs/armeabi/libjni_bipinyinime.so
+* lint.xml => app/lint.xml
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+* src/net/bestidear/inputmethod/remote/IPinyinDecoderService.aidl => app/src/main/aidl/net/bestidear/inputmethod/remote/IPinyinDecoderService.aidl
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 19
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "net.bestidear.inputmethod.remote"
+        minSdkVersion 14
+        targetSdkVersion 17
+
+//        ndk {
+//            moduleName "libjni_bipinyinime"
+//        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
