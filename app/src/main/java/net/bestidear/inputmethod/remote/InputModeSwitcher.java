@@ -422,15 +422,15 @@ public class InputModeSwitcher {
 
         switch (layout) {
         case MASK_SKB_LAYOUT_QWERTY:
-            return R.xml.skb_qwerty;
+            return R.xml.skb_shuyun_qwerty;
         case MASK_SKB_LAYOUT_SYMBOL1:
-            return R.xml.skb_sym1;
+            return R.xml.skb_shuyun_symen;
         case MASK_SKB_LAYOUT_SYMBOL2:
-            return R.xml.skb_sym2;
+            return R.xml.skb_shuyun_symzh;
         case MASK_SKB_LAYOUT_SMILEY:
             return R.xml.skb_smiley;
         case MASK_SKB_LAYOUT_PHONE:
-            return R.xml.skb_phone;
+            return R.xml.skb_shuyun_num;
         }
         return 0;
     }

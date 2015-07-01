@@ -39,6 +39,7 @@ static size_t predict_len;
 
 static Sync sync_worker;
 
+
 static struct file_descriptor_offsets_t
 {
   jclass mClass;

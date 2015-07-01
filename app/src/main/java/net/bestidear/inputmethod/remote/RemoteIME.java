@@ -317,7 +317,7 @@ public class RemoteIME extends InputMethodService {
             keyChar = ',';
         } else if (keyCode == KeyEvent.KEYCODE_PERIOD) {
             keyChar = '.';
-        } else if (keyCode == KeyEvent.KEYCODE_SPACE) {
+        } else if (keyCode == KeyEvent.KEYCODE_SPACE || keyCode== KeyEvent.KEYCODE_BUTTON_Y) {
             keyChar = ' ';
         } else if (keyCode == KeyEvent.KEYCODE_APOSTROPHE) {
             keyChar = '\'';
@@ -436,6 +436,22 @@ public class RemoteIME extends InputMethodService {
             }
         }
 
+        if (keyCode == KeyEvent.KEYCODE_BUTTON_L1) {
+            if (!realAction) return true;
+
+            simulateKeyEventDownUp(KeyEvent.KEYCODE_DPAD_LEFT);
+
+            return true;
+        }
+
+        if (keyCode == KeyEvent.KEYCODE_BUTTON_R1) {
+            if (!realAction) return true;
+
+            simulateKeyEventDownUp(KeyEvent.KEYCODE_DPAD_RIGHT);
+
+            return true;
+        }
+
         // Chinese related input is handle separately.
         if (mInputModeSwitcher.isChineseText()) {
             return false;
@@ -474,28 +490,32 @@ public class RemoteIME extends InputMethodService {
                 return true;
             }
 
-            if (keyCode == KeyEvent.KEYCODE_DEL &&
+            if ((keyCode == KeyEvent.KEYCODE_DEL || keyCode == KeyEvent.KEYCODE_BUTTON_X) &&
                     ImeState.STATE_PREDICT == mImeState) {
                 if (!realAction) return true;
                 resetToIdleState(false);
                 return true;
             }
+
+
         } else {
-            if (keyCode == KeyEvent.KEYCODE_DEL) {
+            if (keyCode == KeyEvent.KEYCODE_DEL || keyCode == KeyEvent.KEYCODE_BUTTON_X) {
                 if (!realAction) return true;
                 if (SIMULATE_KEY_DELETE) {
-                    simulateKeyEventDownUp(keyCode);
+                    simulateKeyEventDownUp(KeyEvent.KEYCODE_DEL);
                 } else {
                     getCurrentInputConnection().deleteSurroundingText(1, 0);
                 }
                 return true;
             }
+
+
             if (keyCode == KeyEvent.KEYCODE_ENTER) {
                 if (!realAction) return true;
                 sendKeyChar('\n');
                 return true;
             }
-            if (keyCode == KeyEvent.KEYCODE_SPACE) {
+            if (keyCode == KeyEvent.KEYCODE_SPACE  || keyCode == KeyEvent.KEYCODE_BUTTON_Y) {
                 if (!realAction) return true;
                 sendKeyChar(' ');
                 return true;
@@ -647,7 +667,7 @@ public class RemoteIME extends InputMethodService {
             }
             return true;
         } else if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER
-                || keyCode == KeyEvent.KEYCODE_SPACE) {
+                || keyCode == KeyEvent.KEYCODE_SPACE || keyCode == KeyEvent.KEYCODE_BUTTON_Y) {
             if (!realAction) return true;
             chooseCandidate(-1);
             return true;
@@ -722,7 +742,7 @@ public class RemoteIME extends InputMethodService {
             sendKeyChar('\n');
             resetToIdleState(false);
         } else if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER
-                || keyCode == KeyEvent.KEYCODE_SPACE) {
+                || keyCode == KeyEvent.KEYCODE_SPACE  || keyCode == KeyEvent.KEYCODE_BUTTON_Y) {
             chooseCandidate(-1);
         }
 
@@ -767,7 +787,7 @@ public class RemoteIME extends InputMethodService {
                 || keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
             mComposingView.moveCursor(keyCode);
         } else if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER
-                || keyCode == KeyEvent.KEYCODE_SPACE) {
+                || keyCode == KeyEvent.KEYCODE_SPACE  || keyCode == KeyEvent.KEYCODE_BUTTON_Y) {
             if (ComposingView.ComposingStatus.SHOW_STRING_LOWERCASE == cmpsvStatus) {
                 String str = mDecInfo.getOrigianlSplStr().toString();
                 if (!tryInputRawUnicode(str)) {

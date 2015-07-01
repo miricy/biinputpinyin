@@ -21,12 +21,15 @@
 #include <unistd.h>
 #include "../include/dicttrie.h"
 
+
+
 using namespace ime_pinyin;
 
 /**
  * Build binary dictionary model. Make sure that ___BUILD_MODEL___ is defined
  * in dictdef.h.
- */
+ *///
+ /*
 int main(int argc, char* argv[]) {
   DictTrie* dict_trie = new DictTrie();
   bool success;
@@ -54,3 +57,4 @@ int main(int argc, char* argv[]) {
 
   return 0;
 }
+//*/

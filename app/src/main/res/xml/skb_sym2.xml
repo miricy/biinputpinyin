@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (C) 2009 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,19 +16,17 @@
 <keyboard
   skb_template="@xml/skb_template1"
   skb_cache_flag="true"
-  width="7.69%p"
+  width="10%p"
   height="25%p"
   key_type="0"
   repeat="false"
   balloon="true">
 
   <row>
-    <keys splitter="|" labels="1|2|3"/>
     <keys splitter="|" labels="~|±|×|÷|•|°|&lt;|&gt;|{|}"/>
   </row>
 
   <row>
-    <keys splitter="|" labels="4|5|6" />
     <keys splitter="|" labels="©|£|€|^|®"/>
     <key label="℃">
       <toggle_state state_id="@string/toggle_en_sym2" label="℉"/>
@@ -42,9 +40,8 @@
     </key>
   </row>
 
-  <row >
-    <keys splitter="|" labels="7|8|9" />  
-    <key code="-5" width="11.54%p" key_type="3" label="ALT"/>
+  <row width="10.205%p">
+    <key code="-5" width="14.286%p" key_type="3" label="ALT"/>
     <key label="™"/>
     <key label="‘">
       <toggle_state state_id="@string/toggle_en_sym2" label="‘"/>
@@ -56,16 +53,11 @@
     <key id="3"/>
   </row>
 
-  <row  key_type="1">
-    <key label="。" 
-      icon_popup="@drawable/period_full_popup_icon" key_type="1"/>
-    <key label="0"  key_type="0"></key>
-    <key label="/" key_type="1"></key>
-    <key code="-3" key_type="1" label="abc" width="11.54%p" />
-    <key code="-2" label="中 符" width="16.15%p" repeat="true">
+  <row width="14.696%p" key_type="1">
+    <key code="-2" label="中 符" width="20%p" repeat="true">
       <toggle_state state_id="@string/toggle_en_sym2" label="英 符" code="-2"/>
     </key>
-    
+    <key code="-3" key_type="3" label="\?123"/>
     <key code="62" key_type="5" width="30.608%p"/>
     <key label="……" key_type="0">
       <toggle_state state_id="@string/toggle_en_sym2" label="…"/>

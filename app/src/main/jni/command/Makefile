@@ -19,9 +19,9 @@ LIBRARY_SRC= \
 	    ../share/utf16char.cpp \
 	    ../share/utf16reader.cpp \
 
-all: engine
+#all: engine
 
-engine: $(PINYINIME_DICTBUILDER)
+#engine: $(PINYINIME_DICTBUILDER)
 
 $(PINYINIME_DICTBUILDER): $(LIBRARY_SRC) pinyinime_dictbuilder.cpp
 	@$(CPP) $(CPPFLAGS) -o $@ $?
