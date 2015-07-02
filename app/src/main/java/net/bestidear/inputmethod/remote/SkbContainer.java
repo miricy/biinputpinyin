@@ -684,6 +684,50 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
             }
         }
     }
+
+    public SoftKey setKeyFocus(int keyCode)
+    {
+        SoftKeyboard skb = mMajorView.getSoftKeyboard();
+        if (null == skb) return null;
+
+        if(!this.hasFocus()){
+            Log.d("SoftKeyboard", "keyboard no focus");
+            return null;
+        }
+        switch(keyCode)
+        {
+            case KeyEvent.KEYCODE_BUTTON_L1:
+                mSoftKeyFocus = skb.getKey(0, 0);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_R1:
+                mSoftKeyFocus = skb.getKey(0, 11);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_L2:
+                mSoftKeyFocus = skb.getKey(1, 0);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_R2:
+                mSoftKeyFocus = skb.getKey(3, 0);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_X:
+                mSoftKeyFocus = skb.getKey(1, 11);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_Y:
+                mSoftKeyFocus = skb.getKey(3, 4);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_SELECT:
+                mSoftKeyFocus = skb.getKey(2, 0);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
+        }
+        return mSoftKeyFocus;
+
+    }
     
     //Add by lyra, return value: lose keyboard focus
     public SoftKey processFunctionKey(int keyCode) {

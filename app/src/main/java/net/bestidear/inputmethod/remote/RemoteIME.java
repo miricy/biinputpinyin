@@ -318,6 +318,7 @@ public class RemoteIME extends InputMethodService {
         } else if (keyCode == KeyEvent.KEYCODE_PERIOD) {
             keyChar = '.';
         } else if (keyCode == KeyEvent.KEYCODE_SPACE || keyCode== KeyEvent.KEYCODE_BUTTON_Y) {
+            mSkbContainer.setKeyFocus(KeyEvent.KEYCODE_BUTTON_Y);
             keyChar = ' ';
         } else if (keyCode == KeyEvent.KEYCODE_APOSTROPHE) {
             keyChar = '\'';
@@ -375,6 +376,20 @@ public class RemoteIME extends InputMethodService {
                 return true;
             }
         }
+
+        if (keyCode == KeyEvent.KEYCODE_BUTTON_L2 || keyCode== KeyEvent.KEYCODE_BUTTON_R2 ||
+                keyCode==KeyEvent.KEYCODE_BUTTON_Y || keyCode==KeyEvent.KEYCODE_BUTTON_SELECT ) {
+            if (!realAction) return true;
+
+            SoftKey key = mSkbContainer.setKeyFocus(keyCode);
+            if (key != null) {
+                //          if(key.getKeyCode()==KeyEvent.KEYCODE_ENTER)
+                //              return false;
+                responseSoftKeyEvent(key);
+                return true;
+            }
+        }
+
         if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
             if (!realAction) return true;
 
@@ -438,7 +453,7 @@ public class RemoteIME extends InputMethodService {
 
         if (keyCode == KeyEvent.KEYCODE_BUTTON_L1) {
             if (!realAction) return true;
-
+            mSkbContainer.setKeyFocus(keyCode);
             simulateKeyEventDownUp(KeyEvent.KEYCODE_DPAD_LEFT);
 
             return true;
@@ -446,7 +461,7 @@ public class RemoteIME extends InputMethodService {
 
         if (keyCode == KeyEvent.KEYCODE_BUTTON_R1) {
             if (!realAction) return true;
-
+            mSkbContainer.setKeyFocus(keyCode);
             simulateKeyEventDownUp(KeyEvent.KEYCODE_DPAD_RIGHT);
 
             return true;
@@ -493,6 +508,7 @@ public class RemoteIME extends InputMethodService {
             if ((keyCode == KeyEvent.KEYCODE_DEL || keyCode == KeyEvent.KEYCODE_BUTTON_X) &&
                     ImeState.STATE_PREDICT == mImeState) {
                 if (!realAction) return true;
+                mSkbContainer.setKeyFocus(keyCode);
                 resetToIdleState(false);
                 return true;
             }
@@ -501,6 +517,7 @@ public class RemoteIME extends InputMethodService {
         } else {
             if (keyCode == KeyEvent.KEYCODE_DEL || keyCode == KeyEvent.KEYCODE_BUTTON_X) {
                 if (!realAction) return true;
+                mSkbContainer.setKeyFocus(keyCode);
                 if (SIMULATE_KEY_DELETE) {
                     simulateKeyEventDownUp(KeyEvent.KEYCODE_DEL);
                 } else {
@@ -517,6 +534,7 @@ public class RemoteIME extends InputMethodService {
             }
             if (keyCode == KeyEvent.KEYCODE_SPACE  || keyCode == KeyEvent.KEYCODE_BUTTON_Y) {
                 if (!realAction) return true;
+                mSkbContainer.setKeyFocus(KeyEvent.KEYCODE_BUTTON_Y);
                 sendKeyChar(' ');
                 return true;
             }
