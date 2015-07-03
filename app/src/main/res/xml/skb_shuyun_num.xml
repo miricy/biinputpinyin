@@ -2,27 +2,27 @@
 
 <keyboard
     skb_template="@xml/skb_shuyun_template"
-    width="25%p"
+    width="10%p"
     height="25%p"
     key_type="0"
     repeat="false"
     balloon="false">
 
-    <row>
+    <row start_pos_x="30%p">
         <keys splitter="|" labels="1|2|3|4" />
     </row>
-    <row>
+    <row  start_pos_x="30%p">
         <keys splitter="|" labels="5|6|7|8" />
     </row>
-    <row>
+    <row  start_pos_x="30%p">
         <keys splitter="|" labels="9|0|.|-" />
     </row>
-    <row>
+    <row  start_pos_x="30%p">
         <key start_pos_x="40%p" start_pos_y="75%p"
-            width="16%p" height="25%p" code="67" key_type="8" label=" " repeat="true"/>
+            width="20%p" height="25%p" code="67" key_type="8" label=" " repeat="true"/>
 
         <key start_pos_x="56%p" start_pos_y="75%p"
-            width="13%p" height="25%p" code="66" key_type="9" label=" " />
+            width="20%p" height="25%p" code="66" key_type="9" label=" " />
 
     </row>
 </keyboard>

@@ -62,7 +62,7 @@
             <toggle_state state_id="@string/toggle_en_sym1" label="&quot;"/>
         </key>
         <key label="”">
-            <toggle_state state_id="@string/toggle_en_sym1" label="©"/>
+            <toggle_state state_id="@string/toggle_en_sym1" label="_"/>
         </key>
         <key label="。" key_type="0" icon="@drawable/period_full_icon"
             icon_popup="@drawable/period_full_popup_icon">
