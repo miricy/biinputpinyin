@@ -526,13 +526,20 @@ public class InputModeSwitcher {
     public int requestInputWithHkb(EditorInfo editorInfo) {
         mShortMessageField = false;
         boolean english = false;
-        int newInputMode = MODE_HKB_CHINESE;
+        int newInputMode = MODE_HKB_ENGLISH;
+
+        if ((mRecentLauageInputMode & MASK_LANGUAGE) == MASK_LANGUAGE_CN) {
+            newInputMode = MODE_HKB_CHINESE;
+        } else {
+            newInputMode = MODE_HKB_ENGLISH;
+        }
 
         switch (editorInfo.inputType & EditorInfo.TYPE_MASK_CLASS) {
         case EditorInfo.TYPE_CLASS_NUMBER:
         case EditorInfo.TYPE_CLASS_PHONE:
         case EditorInfo.TYPE_CLASS_DATETIME:
             english = true;
+            newInputMode = MODE_SKB_PHONE_NUM;
             break;
         case EditorInfo.TYPE_CLASS_TEXT:
             int v = editorInfo.inputType & EditorInfo.TYPE_MASK_VARIATION;
@@ -540,7 +547,7 @@ public class InputModeSwitcher {
                     || v == EditorInfo.TYPE_TEXT_VARIATION_PASSWORD
                     || v == EditorInfo.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
                     || v == EditorInfo.TYPE_TEXT_VARIATION_URI) {
-                english = true;
+                newInputMode = MODE_HKB_ENGLISH;
             } else if (v == EditorInfo.TYPE_TEXT_VARIATION_SHORT_MESSAGE) {
                 mShortMessageField = true;
             }
@@ -548,21 +555,6 @@ public class InputModeSwitcher {
         default:
         }
 
-        if (english) {
-            // If the application request English mode, we switch to it.
-            newInputMode = MODE_HKB_ENGLISH;
-        } else {
-            // If the application do not request English mode, we will
-            // try to keep the previous mode to input language text.
-            // Because there is not soft keyboard, we need discard all
-            // soft keyboard related information from the previous language
-            // mode.
-            if ((mRecentLauageInputMode & MASK_LANGUAGE) == MASK_LANGUAGE_CN) {
-                newInputMode = MODE_HKB_CHINESE;
-            } else {
-                newInputMode = MODE_HKB_ENGLISH;
-            }
-        }
         mEditorInfo = editorInfo;
         saveInputMode(newInputMode);
         prepareToggleStates(false);
@@ -578,7 +570,7 @@ public class InputModeSwitcher {
         switch (editorInfo.inputType & EditorInfo.TYPE_MASK_CLASS) {
         case EditorInfo.TYPE_CLASS_NUMBER:
         case EditorInfo.TYPE_CLASS_DATETIME:
-            newInputMode = MODE_SKB_SYMBOL1_EN;
+            newInputMode = MODE_SKB_PHONE_NUM;
             break;
         case EditorInfo.TYPE_CLASS_PHONE:
             newInputMode = MODE_SKB_PHONE_NUM;

@@ -266,11 +266,13 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
         mMajorView.invalidate();
     }
 
+    boolean islayoutSwitch=false;
     public void updateInputMode() {
         int skbLayout = mInputModeSwitcher.getSkbLayout();
         if (mSkbLayout != skbLayout) {
             mSkbLayout = skbLayout;
             updateSkbLayout();
+            islayoutSwitch=true;
         }
 
         mLastCandidatesShowing = false;
@@ -566,8 +568,14 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
             if (!mPopupSkbShow || !mPopupSkbNoResponse) {
                 responseKeyEvent(mSoftKeyDown);
                 requestFocus();
-                mSoftKeyFocus = mSoftKeyDown;
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+
+                if(!islayoutSwitch || mSoftKeyDown.getKeyCode()!=-3)
+                {
+                    mSoftKeyFocus = mSoftKeyDown;
+                    mMajorView.changeFocusKey(mSoftKeyFocus);
+
+                }
+                islayoutSwitch=false;
             }
 
             if (mSkv == mPopupSkbView && !mPopupSkbNoResponse) {

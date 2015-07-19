@@ -100,8 +100,8 @@
     </key>
 
     <!-- Enter key for phone keyboard.-->
-    <key id="2" start_pos_x="85%p" start_pos_y="50%p"
-        width="15%p" height="25%p" code="66" key_type="9" label=" "  balloon="false">
+    <key id="2" start_pos_x="81%p" start_pos_y="50%p"
+        width="14%p" height="25%p" code="66" key_type="9" label=" "  balloon="false">
         <toggle_state state_id="@string/toggle_enter_go" label=" " code="66"/>
         <toggle_state state_id="@string/toggle_enter_search" code="66" label=" "/>
         <toggle_state state_id="@string/toggle_enter_send" label=" " code="66"/>
@@ -110,7 +110,7 @@
     </key>
 
     <!-- Delete key.-->
-    <key id="3" start_pos_x="90%p" start_pos_y="25%p"
+    <key id="3" start_pos_x="85%p" start_pos_y="25%p"
         width="10%p" height="25%p" code="67" key_type="8" label=" " balloon="false"
         repeat="true"/>
 
@@ -123,7 +123,7 @@
         width="16%p" height="25%p" key_type="3"  label="\?123"/>
 
     <!-- Language-switching key. -->
-    <key id="6" start_pos_x="0%p" start_pos_y="50%p"
+    <key id="6" start_pos_x="5%p" start_pos_y="50%p"
         width="13%p" height="25%p" code="-2" label=" " key_type="11" balloon="false"
         repeat="true">
         <toggle_state state_id="@string/toggle_en_lower" label=" " code="-2" key_type="12"/>

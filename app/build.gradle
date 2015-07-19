@@ -8,9 +8,9 @@ android {
         minSdkVersion 14
         targetSdkVersion 17
 
-//        ndk {
-//            moduleName "libjni_bipinyinime"
-//        }
+        ndk {
+            moduleName "libjni_bipinyinime"
+        }
     }
 
     buildTypes {
