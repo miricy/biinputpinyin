@@ -1135,6 +1135,7 @@ public class RemoteIME extends InputMethodService {
             updateIcon(mInputModeSwitcher.switchModeForUserKey(keyCode));
             resetToIdleState(false);
             mSkbContainer.updateInputMode();
+            if(!mInputModeSwitcher.isChineseText()) dismissCandidateWindow();
         } else {
             if (sKey.isKeyCodeKey()) {
                 KeyEvent eDown = new KeyEvent(0, 0, KeyEvent.ACTION_DOWN,

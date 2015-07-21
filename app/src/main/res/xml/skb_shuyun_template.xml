@@ -58,7 +58,7 @@
 
     <key_type
         id="8"
-        bg="@drawable/shuyun_delete"
+        bg="@color/color_normal"
         hlbg="@drawable/shuyun_deletehl"/>
 
     <key_type
@@ -87,31 +87,44 @@
         hlbg="@drawable/shuyun_symhl"/>
 
 
+    <!-- Default icons for enter key -->
+    <key_icon code="66" icon="@drawable/enter_icon"
+        icon_popup="@drawable/enter_popup_icon"/>
+
+    <!-- Default icons for space key -->
+    <key_icon code="62" icon="@drawable/ic_key_space"
+        icon_popup="@drawable/ic_key_space"/>
+
+
+    <!-- Default icons for delete key -->
+    <key_icon code="67" icon="@drawable/delete_icon"
+        icon_popup="@drawable/delete_popup_icon"/>
+
 
     <!-- Default key definition -->
     <!-- Enter key for QWERTY-like keyboards.-->
     <key id="1" start_pos_x="86%p" start_pos_y="75%p"
-        width="13%p" height="25%p" code="66" label=" " key_type="9" balloon="false">
-        <toggle_state state_id="@string/toggle_enter_go"  label=" " code="66"/>
-        <toggle_state state_id="@string/toggle_enter_search" label=" " code="66" />
-        <toggle_state state_id="@string/toggle_enter_send"  label=" " code="66"/>
-        <toggle_state state_id="@string/toggle_enter_next"  label=" " code="66"/>
-        <toggle_state state_id="@string/toggle_enter_done"  label=" " code="66"/>
+        width="13%p" height="25%p" code="66" icon="@drawable/ic_key_enter" label=" " key_type="0" balloon="false">
+        <toggle_state state_id="@string/toggle_enter_go"  icon="@drawable/ic_key_enter"  label=" " code="66"/>
+        <toggle_state state_id="@string/toggle_enter_search"  icon="@drawable/ic_key_enter" label=" " code="66" />
+        <toggle_state state_id="@string/toggle_enter_send"  icon="@drawable/ic_key_enter"  label=" " code="66"/>
+        <toggle_state state_id="@string/toggle_enter_next"  icon="@drawable/ic_key_enter"  label=" " code="66"/>
+        <toggle_state state_id="@string/toggle_enter_done"  icon="@drawable/ic_key_enter"  label=" " code="66"/>
     </key>
 
     <!-- Enter key for phone keyboard.-->
     <key id="2" start_pos_x="81%p" start_pos_y="50%p"
-        width="14%p" height="25%p" code="66" key_type="9" label=" "  balloon="false">
-        <toggle_state state_id="@string/toggle_enter_go" label=" " code="66"/>
-        <toggle_state state_id="@string/toggle_enter_search" code="66" label=" "/>
-        <toggle_state state_id="@string/toggle_enter_send" label=" " code="66"/>
-        <toggle_state state_id="@string/toggle_enter_next" label=" " code="66"/>
-        <toggle_state state_id="@string/toggle_enter_done" label=" " code="66"/>
+        width="14%p" height="25%p" code="66" key_type="0"  icon="@drawable/ic_key_enter" label=" "  balloon="false">
+        <toggle_state state_id="@string/toggle_enter_go" icon="@drawable/ic_key_enter"  label=" " code="66"/>
+        <toggle_state state_id="@string/toggle_enter_search" icon="@drawable/ic_key_enter"  code="66" label=" "/>
+        <toggle_state state_id="@string/toggle_enter_send" icon="@drawable/ic_key_enter"  label=" " code="66"/>
+        <toggle_state state_id="@string/toggle_enter_next"  icon="@drawable/ic_key_enter" label=" " code="66"/>
+        <toggle_state state_id="@string/toggle_enter_done"  icon="@drawable/ic_key_enter" label=" " code="66"/>
     </key>
 
     <!-- Delete key.-->
     <key id="3" start_pos_x="85%p" start_pos_y="25%p"
-        width="10%p" height="25%p" code="67" key_type="8" label=" " balloon="false"
+        width="10%p" height="25%p" code="67" key_type="0" icon="@drawable/ic_key_del" label="X" balloon="false"
         repeat="true"/>
 
     <!-- Symbol-switching key (off-mode).-->
@@ -124,12 +137,12 @@
 
     <!-- Language-switching key. -->
     <key id="6" start_pos_x="5%p" start_pos_y="50%p"
-        width="13%p" height="25%p" code="-2" label=" " key_type="11" balloon="false"
+        width="13%p" height="25%p" code="-2" icon="@drawable/ic_key_lszh" balloon="false"
         repeat="true">
-        <toggle_state state_id="@string/toggle_en_lower" label=" " code="-2" key_type="12"/>
-        <toggle_state state_id="@string/toggle_en_upper" label=" " code="-2" key_type="12"/>
-        <toggle_state state_id="@string/toggle_en_sym1" label=" " code="-2" key_type="12"/>
-        <toggle_state state_id="@string/toggle_en_sym2" label=" " code="-2" key_type="11"/>
+        <toggle_state state_id="@string/toggle_en_lower" label=" " code="-2" icon="@drawable/ic_key_lsen"/>
+        <toggle_state state_id="@string/toggle_en_upper" label=" " code="-2" icon="@drawable/ic_key_lsen"/>
+        <toggle_state state_id="@string/toggle_en_sym1" label=" " code="-2" icon="@drawable/ic_key_lsen"/>
+        <toggle_state state_id="@string/toggle_en_sym2" label=" " code="-2" icon="@drawable/ic_key_lszh"/>
     </key>
 
     <!-- Period key(English mode). -->

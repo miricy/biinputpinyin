@@ -10,7 +10,7 @@
     balloon="false">
 
     <row start_pos_x="5%p">
-        <key label="" code="102" width="10%p" key_type="6" start_pos_x="1%p"/>
+        <key label="" code="102" width="10%p"  icon="@drawable/ic_key_l1"  start_pos_x="1%p"/>
         <key label="~" />
         <key label="！">
             <toggle_state state_id="@string/toggle_en_sym1" label="!"/>
@@ -31,14 +31,14 @@
         <key label="×">
             <toggle_state state_id="@string/toggle_en_sym1" label="*" />
         </key>
-        <key label="｀">
-            <toggle_state state_id="@string/toggle_en_sym1" label="`"/>
+        <key label="，">
+            <toggle_state state_id="@string/toggle_en_sym1" label=","/>
         </key>
-        <key label="" code="103" width="10%p" key_type="7"/>
+        <key label="" code="103" width="10%p"  icon="@drawable/ic_key_r1" />
     </row>
 
     <row start_pos_x="5%p">
-        <key label="，" width="10%p"  key_type="1">
+        <key icon="@drawable/ic_key_l2uper"  width="10%p"  key_type="1">
             <toggle_state state_id="@string/toggle_smiley" code="-6"
                 icon="@drawable/smiley_icon"  icon_popup="@drawable/smiley_popup_icon"
                 key_type="2"/>
@@ -48,7 +48,6 @@
                 icon_popup="@drawable/shift_on_popup_icon" key_type="3"/>
             <toggle_state state_id="@string/toggle_cn_cand" label="'"
                 key_type="1"/>
-            <toggle_state state_id="@string/toggle_en_sym1" label=","/>
         </key>
 
         <key label="：">
@@ -113,8 +112,8 @@
         <key id="2"/>
     </row>
 
-    <row  key_type="1" start_pos_x="5%p">
-        <key code="-3" key_type="13" label=" " width="16%p" />
+    <row  start_pos_x="5%p">
+        <key code="-3"  icon="@drawable/ic_key_r2abc" width="16%p" />
         <key label="™"/>
         <key label="《">
             <toggle_state state_id="@string/toggle_en_sym1" label="&lt;"/>
@@ -122,7 +121,7 @@
         <key label="》">
             <toggle_state state_id="@string/toggle_en_sym1" label="&gt;"/>
         </key>
-        <key code="62"  label=" " key_type="10" width="25%p"/>
+        <key code="62"   width="25%p"/>
         <key label="|">
             <toggle_state state_id="@string/toggle_en_sym1" label="｜"/>
         </key>
