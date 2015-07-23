@@ -3,7 +3,7 @@
 <skb_template
     skb_bg="@color/color_black"
     key_xmargin="0.2%p"
-    key_ymargin="2%p"
+    key_ymargin="1%p"
     balloon_bg="@color/color_black"
     popup_bg="@color/color_black"
     color="@color/color_white"
@@ -103,7 +103,7 @@
 
     <!-- Default key definition -->
     <!-- Enter key for QWERTY-like keyboards.-->
-    <key id="1" start_pos_x="86%p" start_pos_y="75%p"
+    <key id="1" start_pos_x="86%p"
         width="13%p" height="25%p" code="66" icon="@drawable/ic_key_enter" label=" " key_type="0" balloon="false">
         <toggle_state state_id="@string/toggle_enter_go"  icon="@drawable/ic_key_enter"  label=" " code="66"/>
         <toggle_state state_id="@string/toggle_enter_search"  icon="@drawable/ic_key_enter" label=" " code="66" />
@@ -113,8 +113,8 @@
     </key>
 
     <!-- Enter key for phone keyboard.-->
-    <key id="2" start_pos_x="81%p" start_pos_y="50%p"
-        width="14%p" height="25%p" code="66" key_type="0"  icon="@drawable/ic_key_enter" label=" "  balloon="false">
+    <key id="2" start_pos_x="72%p" start_pos_y="44%p"
+        width="15%p"  height="22%p"  code="66" key_type="0"  icon="@drawable/ic_key_enter" label=" "  balloon="false">
         <toggle_state state_id="@string/toggle_enter_go" icon="@drawable/ic_key_enter"  label=" " code="66"/>
         <toggle_state state_id="@string/toggle_enter_search" icon="@drawable/ic_key_enter"  code="66" label=" "/>
         <toggle_state state_id="@string/toggle_enter_send" icon="@drawable/ic_key_enter"  label=" " code="66"/>
@@ -123,12 +123,12 @@
     </key>
 
     <!-- Delete key.-->
-    <key id="3" start_pos_x="85%p" start_pos_y="25%p"
-        width="10%p" height="25%p" code="67" key_type="0" icon="@drawable/ic_key_del" label="X" balloon="false"
+    <key id="3" start_pos_x="74%p" start_pos_y="22%p"
+        width="13%p"  height="22%p" code="67" key_type="0" icon="@drawable/ic_key_del" label="X" balloon="false"
         repeat="true"/>
 
     <!-- Symbol-switching key (off-mode).-->
-    <key id="4" code="-3" start_pos_x="23.07%p" start_pos_y="75%p" balloon="false"
+    <key id="4" code="-3" start_pos_x="23.07%p"  balloon="false"
         width="16%p" height="25%p" key_type="2" label="\?123"/>
 
     <!-- Symbol-switching key (on-mode).-->
@@ -136,8 +136,8 @@
         width="16%p" height="25%p" key_type="3"  label="\?123"/>
 
     <!-- Language-switching key. -->
-    <key id="6" start_pos_x="5%p" start_pos_y="50%p"
-        width="13%p" height="25%p" code="-2" icon="@drawable/ic_key_lszh" balloon="false"
+    <key id="6" start_pos_x="11%p" start_pos_y="44%p"
+        width="16%p"  height="22%p" code="-2" icon="@drawable/ic_key_lszh" balloon="false"
         repeat="true">
         <toggle_state state_id="@string/toggle_en_lower" label=" " code="-2" icon="@drawable/ic_key_lsen"/>
         <toggle_state state_id="@string/toggle_en_upper" label=" " code="-2" icon="@drawable/ic_key_lsen"/>

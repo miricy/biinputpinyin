@@ -27,7 +27,7 @@
     android:src="@drawable/arrow_left"
     android:layout_height="match_parent"
     android:layout_width="50dip"
-    android:layout_marginLeft="20dp"
+    android:layout_marginLeft="90dp"
     android:clickable="true"
     android:layout_alignParentLeft="true"/>
 
@@ -36,7 +36,7 @@
     android:src="@drawable/arrow_right"
     android:layout_width="50dip"
     android:layout_height="match_parent"
-    android:layout_marginRight="20dp"
+    android:layout_marginRight="110dp"
     android:clickable="true"
     android:layout_alignParentRight="true"/>
 

@@ -1017,7 +1017,7 @@ public class RemoteIME extends InputMethodService {
                 }
 
                 if (mDecInfo.mCandidatesList.size() > 0) {
-                    showCandidateWindow(false);
+                    showCandidateWindow(true);//TODO false to true
                 } else {
                     resetToIdleState(false);
                 }
@@ -1211,7 +1211,7 @@ public class RemoteIME extends InputMethodService {
         } catch (Exception e) {
             Log.e(TAG, "Fail to show the PopupWindow.");
         }
-        setCandidatesViewShown(false);
+        setCandidatesViewShown(true);//TODO set false to true
 
         if (null != mSkbContainer && mSkbContainer.isShown()) {
             mSkbContainer.toggleCandidateMode(false);
@@ -1237,7 +1237,7 @@ public class RemoteIME extends InputMethodService {
         mDecInfo.resetCandidates();
 
         if (null != mCandidatesContainer && mCandidatesContainer.isShown()) {
-            showCandidateWindow(false);
+            showCandidateWindow(true);//TODO change false to true
         }
     }
 
@@ -1284,7 +1284,7 @@ public class RemoteIME extends InputMethodService {
         updateIcon(mInputModeSwitcher.requestInputWithSkb(editorInfo));
         resetToIdleState(false);
         mSkbContainer.updateInputMode();
-        setCandidatesViewShown(false);
+        setCandidatesViewShown(true);//TODO set false to true
         mSkbContainer.requestFocus();
         mSkbContainer.clearKeyFocus();
     }
@@ -1326,7 +1326,7 @@ public class RemoteIME extends InputMethodService {
                 ImeState.STATE_PREDICT == mImeState) {
             mImeState = ImeState.STATE_APP_COMPLETION;
             mDecInfo.prepareAppCompletions(completions);
-            showCandidateWindow(false);
+            showCandidateWindow(false);//TODO change false to true;
         }
     }
 
