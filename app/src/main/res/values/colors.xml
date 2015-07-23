@@ -29,6 +29,6 @@
     <color name="color_white">#ffffffff</color>
     <color name="color_black">#ff000000</color>
     <color name="color_green">#ff33ff33</color>
-    <color name="color_focus">#ff010099</color>
+    <color name="color_focus">#ff01a61b</color>
     <color name="color_normal">#ff3f3f42</color> <!--#ff17171d #3f3f42-  focus ff01a61b-->
 </resources>

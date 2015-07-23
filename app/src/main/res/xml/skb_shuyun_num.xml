@@ -19,10 +19,10 @@
     </row>
     <row  start_pos_x="34%p">
         <key start_pos_x="34%p" start_pos_y="75%p"
-            width="15%p" height="25%p" code="67" key_type="8" label=" " repeat="true"/>
+            width="15%p" height="25%p" code="67"  icon="@drawable/ic_key_del" repeat="true"/>
 
         <key start_pos_x="54%p" start_pos_y="75%p"
-            width="17%p" height="25%p" code="66" key_type="9" label=" " />
+            width="17%p" height="25%p" code="66" icon="@drawable/ic_key_enter" label=" " />
 
     </row>
 </keyboard>
