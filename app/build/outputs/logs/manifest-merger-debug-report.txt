@@ -1,0 +1,103 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:16:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:16:11
+	package
+		ADDED from AndroidManifest.xml:17:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:19:5
+	android:versionCode
+		ADDED from AndroidManifest.xml:19:33
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+original-package
+ADDED from AndroidManifest.xml:21:9
+	android:name
+		ADDED from AndroidManifest.xml:21:27
+uses-permission#android.permission.VIBRATE
+ADDED from AndroidManifest.xml:23:9
+	android:name
+		ADDED from AndroidManifest.xml:23:26
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:24:9
+	android:name
+		ADDED from AndroidManifest.xml:24:26
+uses-permission#android.permission.READ_USER_DICTIONARY
+ADDED from AndroidManifest.xml:25:9
+	android:name
+		ADDED from AndroidManifest.xml:25:26
+uses-permission#android.permission.WRITE_USER_DICTIONARY
+ADDED from AndroidManifest.xml:26:9
+	android:name
+		ADDED from AndroidManifest.xml:26:26
+uses-permission#android.permission.READ_CONTACTS
+ADDED from AndroidManifest.xml:27:9
+	android:name
+		ADDED from AndroidManifest.xml:27:26
+uses-sdk
+ADDED from AndroidManifest.xml:28:9
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:28:46
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:28:19
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+application
+ADDED from AndroidManifest.xml:30:9
+	android:label
+		ADDED from AndroidManifest.xml:31:11
+	android:icon
+		ADDED from AndroidManifest.xml:30:22
+service#net.bestidear.inputmethod.remote.PinyinDecoderService
+ADDED from AndroidManifest.xml:32:13
+	android:exported
+		ADDED from AndroidManifest.xml:33:17
+	android:name
+		ADDED from AndroidManifest.xml:32:22
+intent-filter#android.intent.category.DEFAULT+net.bestidear.inputmethod.pinyin.Decoder_Service
+ADDED from AndroidManifest.xml:34:17
+action#net.bestidear.inputmethod.pinyin.Decoder_Service
+ADDED from AndroidManifest.xml:35:21
+	android:name
+		ADDED from AndroidManifest.xml:35:29
+category#android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:36:21
+	android:name
+		ADDED from AndroidManifest.xml:36:31
+service#net.bestidear.inputmethod.remote.RemoteIME
+ADDED from AndroidManifest.xml:40:13
+	android:label
+		ADDED from AndroidManifest.xml:41:17
+	android:permission
+		ADDED from AndroidManifest.xml:42:21
+	android:name
+		ADDED from AndroidManifest.xml:40:22
+intent-filter#android.view.InputMethod
+ADDED from AndroidManifest.xml:43:17
+action#android.view.InputMethod
+ADDED from AndroidManifest.xml:44:21
+	android:name
+		ADDED from AndroidManifest.xml:44:29
+meta-data#android.view.im
+ADDED from AndroidManifest.xml:46:17
+	android:resource
+		ADDED from AndroidManifest.xml:46:59
+	android:name
+		ADDED from AndroidManifest.xml:46:28
+activity#net.bestidear.inputmethod.remote.SettingsActivity
+ADDED from AndroidManifest.xml:49:13
+	android:label
+		ADDED from AndroidManifest.xml:50:17
+	android:name
+		ADDED from AndroidManifest.xml:49:23
+intent-filter#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:51:17
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:52:21
+	android:name
+		ADDED from AndroidManifest.xml:52:29

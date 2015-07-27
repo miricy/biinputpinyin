@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<keyboard
+    skb_template="@xml/skb_shuyun_template"
+    width="6%p"
+    height="22%p"
+    key_type="0"
+    repeat="false"
+    balloon="false">
+
+    <row start_pos_x="40%p">
+        <keys splitter="|" labels="1|2|3|4" />
+    </row>
+    <row  start_pos_x="40%p">
+        <keys splitter="|" labels="5|6|7|8" />
+    </row>
+    <row  start_pos_x="40%p">
+        <keys splitter="|" labels="9|0|.|-" />
+    </row>
+    <row  start_pos_x="40%p">
+        <key width="12%p" code="67"  icon="@drawable/ic_key_del" repeat="true"/>
+
+        <key width="12%p" code="66" icon="@drawable/ic_key_enter" label=" " />
+
+    </row>
+</keyboard><!-- From: file:/home/alva/AndroidStudioProjects/biinputpinyin/app/src/main/res/xml/skb_shuyun_num.xml -->

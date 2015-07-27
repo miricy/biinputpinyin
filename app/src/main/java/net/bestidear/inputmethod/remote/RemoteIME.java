@@ -1017,7 +1017,7 @@ public class RemoteIME extends InputMethodService {
                 }
 
                 if (mDecInfo.mCandidatesList.size() > 0) {
-                    showCandidateWindow(true);//TODO false to true
+                    showCandidateWindow(false);//TODO false to true
                 } else {
                     resetToIdleState(false);
                 }
@@ -1135,7 +1135,7 @@ public class RemoteIME extends InputMethodService {
             updateIcon(mInputModeSwitcher.switchModeForUserKey(keyCode));
             resetToIdleState(false);
             mSkbContainer.updateInputMode();
-            if(!mInputModeSwitcher.isChineseText()) dismissCandidateWindow();
+            if(!mInputModeSwitcher.isChineseText()) resetCandidateWindow();
         } else {
             if (sKey.isKeyCodeKey()) {
                 KeyEvent eDown = new KeyEvent(0, 0, KeyEvent.ACTION_DOWN,
@@ -1211,7 +1211,7 @@ public class RemoteIME extends InputMethodService {
         } catch (Exception e) {
             Log.e(TAG, "Fail to show the PopupWindow.");
         }
-        setCandidatesViewShown(true);//TODO set false to true
+        setCandidatesViewShown(false);//TODO set false to true
 
         if (null != mSkbContainer && mSkbContainer.isShown()) {
             mSkbContainer.toggleCandidateMode(false);
@@ -1237,7 +1237,7 @@ public class RemoteIME extends InputMethodService {
         mDecInfo.resetCandidates();
 
         if (null != mCandidatesContainer && mCandidatesContainer.isShown()) {
-            showCandidateWindow(true);//TODO change false to true
+            showCandidateWindow(false);
         }
     }
 
@@ -1282,11 +1282,11 @@ public class RemoteIME extends InputMethodService {
                     + String.valueOf(restarting));
         }
         updateIcon(mInputModeSwitcher.requestInputWithSkb(editorInfo));
+        setCandidatesViewShown(true);//TODO set false to true
         resetToIdleState(false);
         mSkbContainer.updateInputMode();
-        setCandidatesViewShown(true);//TODO set false to true
         mSkbContainer.requestFocus();
-        mSkbContainer.clearKeyFocus();
+//        mSkbContainer.clearKeyFocus();
     }
 
     @Override

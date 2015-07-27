@@ -235,8 +235,8 @@ public class CandidateView extends View {
             mShowFootnote = false;
         }
 
-        mActiveCellDrawable = r.getDrawable(R.drawable.candidate_hl_bg);
-        mSeparatorDrawable = r.getDrawable(R.drawable.candidates_vertical_line);
+        mActiveCellDrawable = r.getDrawable(R.color.color_focus);//R.drawable.candidate_hl_bg
+        mSeparatorDrawable = r.getDrawable(R.color.color_black);//R.drawable.candidates_vertical_line
         mCandidateMargin = r.getDimension(R.dimen.candidate_margin_left_right);
 
         mImeCandidateColor = r.getColor(R.color.candidate_color);

@@ -18,17 +18,17 @@
     <color name="label_color_hl0">#ffffffff</color>
     <color name="balloon_color">#ff000000</color>
     <color name="candidate_color">#ffffffff</color>
-    <color name="active_candidate_color">#ff00ff00</color>
-    <color name="recommended_candidate_color">#ffe35900</color>
+    <color name="active_candidate_color">#ffffffff</color>
+    <color name="recommended_candidate_color">#ff01a61b</color>
     <color name="footnote_color">#ff343233</color>
-    <color name="composing_color">#ff000000</color>
+    <color name="composing_color">#ffffffff</color>
     <color name="composing_color_hl">#ffffffff</color>
-    <color name="composing_color_idle">#ff777777</color>
+    <color name="composing_color_idle">#ff000000</color>
     <color name="cands_container_bgcolor">#ff000000</color>
 
     <color name="color_white">#ffffffff</color>
     <color name="color_black">#ff000000</color>
     <color name="color_green">#ff33ff33</color>
     <color name="color_focus">#ff01a61b</color>
-    <color name="color_normal">#ff3f3f42</color> <!--#ff17171d #3f3f42-  focus ff01a61b-->
+    <color name="color_normal">#ff3f3f42</color> <!--#ff17171d #3f3f42-  focus ff01a61b  recommended_candidate_color #ffe35900-->
 </resources>

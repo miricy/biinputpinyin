@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/alva/AndroidStudioProjects/biinputpinyin/app/src/main/res/values-land/dimens.xml -->
+    <eat-comment/>
+    <dimen name="candidate_margin_left_right">40dip</dimen>
+    <dimen name="composing_height">32dip</dimen>
+</resources>

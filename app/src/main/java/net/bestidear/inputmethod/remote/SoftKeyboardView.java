@@ -137,6 +137,7 @@ public class SoftKeyboardView extends View {
             return false;
         }
         mSoftKeyboard = softSkb;
+        mSoftKeyFocus=mSoftKeyboard.getKey(0,0);
         Drawable bg = softSkb.getSkbBackground();
         if (null != bg) setBackgroundDrawable(bg);
         return true;

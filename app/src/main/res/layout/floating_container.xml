@@ -21,7 +21,8 @@
 
   <net.bestidear.inputmethod.remote.ComposingView
     android:id="@+id/composing_view"
-    android:background="@drawable/composing_area_bg"
+    android:background="@color/color_black"
+      android:layout_marginLeft="140dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"/>
 </LinearLayout>
