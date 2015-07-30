@@ -113,7 +113,7 @@
     </key>
 
     <!-- Enter key for phone keyboard.-->
-    <key id="2" start_pos_x="77%p" start_pos_y="44%p"
+    <key id="2" start_pos_x="77%p" start_pos_y="50%p"
         width="12%p"  height="22%p"  code="66" key_type="0"  icon="@drawable/ic_key_enter" label=" "  balloon="false">
         <toggle_state state_id="@string/toggle_enter_go" icon="@drawable/ic_key_enter"  label=" " code="66"/>
         <toggle_state state_id="@string/toggle_enter_search" icon="@drawable/ic_key_enter"  code="66" label=" "/>
@@ -136,7 +136,7 @@
         width="16%p" height="25%p" key_type="3"  label="\?123"/>
 
     <!-- Language-switching key. -->
-    <key id="6" start_pos_x="11%p" start_pos_y="44%p"
+    <key id="6" start_pos_x="11%p" start_pos_y="50%p"
         width="12%p"  height="22%p" code="-2" icon="@drawable/ic_key_lszh" balloon="false"
         repeat="true">
         <toggle_state state_id="@string/toggle_en_lower" label=" " code="-2" icon="@drawable/ic_key_lsen"/>

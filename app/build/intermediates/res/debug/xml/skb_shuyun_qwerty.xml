@@ -11,7 +11,7 @@
     repeat="false"
     balloon="false">
 
-    <row start_pos_x="11%p">
+    <row start_pos_x="11%p" start_pos_y="6%p">
         <key label="" code="102" width="9%p" icon="@drawable/ic_key_l1" start_pos_x="1%p"/>
         <keys splitter="|"  labels="1|2|3|4|5|6|7|8|9|0" />
         <key label="" code="103" width="9%p"  icon="@drawable/ic_key_r1" />
@@ -51,7 +51,7 @@
 
     </row>
 
-    <row  row_id="@string/toggle_row_en" start_pos_y="66%p" start_pos_x="11%p">
+    <row  row_id="@string/toggle_row_en" start_pos_x="11%p" start_pos_y="72%p">
         <key code="-3"  width="14%p" icon="@drawable/ic_key_r2sym"/>
         <keys splitter="|" labels="Z|X|C"
             codes="54|52|31"/>
@@ -61,7 +61,7 @@
 
     </row>
 
-    <row  row_id="@string/toggle_row_uri" start_pos_y="66%p" start_pos_x="11%p">
+    <row  row_id="@string/toggle_row_uri" start_pos_x="11%p"  start_pos_y="72%p">
         <key code="-3"  width="14%p" icon="@drawable/ic_key_r2sym"/>
         <keys splitter="|" labels="Z|X|C"
             codes="54|52|31"/>
@@ -71,7 +71,7 @@
 
     </row>
 
-    <row  row_id="@string/toggle_row_emailaddress" start_pos_y="66%p" start_pos_x="11%p">
+    <row  row_id="@string/toggle_row_emailaddress" start_pos_x="11%p" start_pos_y="72%p">
         <key code="-3" start_pos_x="0%p"
             width="14%p" icon="@drawable/ic_key_r2sym"/>
         <keys splitter="|" labels="Z|X|C"

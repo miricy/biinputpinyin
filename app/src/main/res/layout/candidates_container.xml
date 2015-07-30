@@ -19,6 +19,7 @@
   android:orientation="horizontal"
   android:layout_width="0dip"
   android:layout_height="0dip"
+  android:paddingTop="10dp"
   android:focusable="true"
   android:focusableInTouchMode="true">
 

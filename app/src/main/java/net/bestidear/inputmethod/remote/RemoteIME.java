@@ -397,7 +397,7 @@ public class RemoteIME extends InputMethodService {
                 SoftKey key = mSkbContainer.processFunctionKey(keyCode);
                 if (key == null) {
                     mSkbContainer.clearKeyFocus();
-                    
+
                 }
                 return true;
             }
@@ -1017,7 +1017,7 @@ public class RemoteIME extends InputMethodService {
                 }
 
                 if (mDecInfo.mCandidatesList.size() > 0) {
-                    showCandidateWindow(false);//TODO false to true
+                    showCandidateWindow(false);
                 } else {
                     resetToIdleState(false);
                 }
@@ -1135,7 +1135,7 @@ public class RemoteIME extends InputMethodService {
             updateIcon(mInputModeSwitcher.switchModeForUserKey(keyCode));
             resetToIdleState(false);
             mSkbContainer.updateInputMode();
-            if(!mInputModeSwitcher.isChineseText()) resetCandidateWindow();
+            this.dismissCandidateWindow();
         } else {
             if (sKey.isKeyCodeKey()) {
                 KeyEvent eDown = new KeyEvent(0, 0, KeyEvent.ACTION_DOWN,
@@ -1211,7 +1211,7 @@ public class RemoteIME extends InputMethodService {
         } catch (Exception e) {
             Log.e(TAG, "Fail to show the PopupWindow.");
         }
-        setCandidatesViewShown(false);//TODO set false to true
+        setCandidatesViewShown(false);
 
         if (null != mSkbContainer && mSkbContainer.isShown()) {
             mSkbContainer.toggleCandidateMode(false);
@@ -1282,9 +1282,9 @@ public class RemoteIME extends InputMethodService {
                     + String.valueOf(restarting));
         }
         updateIcon(mInputModeSwitcher.requestInputWithSkb(editorInfo));
-        setCandidatesViewShown(true);//TODO set false to true
         resetToIdleState(false);
         mSkbContainer.updateInputMode();
+        setCandidatesViewShown(false);
         mSkbContainer.requestFocus();
 //        mSkbContainer.clearKeyFocus();
     }
@@ -1326,7 +1326,7 @@ public class RemoteIME extends InputMethodService {
                 ImeState.STATE_PREDICT == mImeState) {
             mImeState = ImeState.STATE_APP_COMPLETION;
             mDecInfo.prepareAppCompletions(completions);
-            showCandidateWindow(false);//TODO change false to true;
+            showCandidateWindow(false);
         }
     }
 
