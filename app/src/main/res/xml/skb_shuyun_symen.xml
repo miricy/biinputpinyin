@@ -4,12 +4,12 @@
     skb_template="@xml/skb_shuyun_template"
     skb_cache_flag="true"
     width="6%p"
-    height="22%p"
+    height="20%p"
     key_type="0"
     repeat="false"
     balloon="false">
 
-    <row start_pos_x="11%p" start_pos_y="6%p">
+    <row start_pos_x="11%p" start_pos_y="14%p">
         <key label="" code="102" width="9%p"  icon="@drawable/ic_key_l1"  start_pos_x="1%p"/>
         <key label="~" />
         <key label="！">

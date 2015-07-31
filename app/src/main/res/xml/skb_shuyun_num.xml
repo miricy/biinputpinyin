@@ -8,7 +8,7 @@
     repeat="false"
     balloon="false">
 
-    <row start_pos_x="40%p">
+    <row start_pos_x="40%p" start_pos_y="8%p">
         <keys splitter="|" labels="1|2|3|4" />
     </row>
     <row  start_pos_x="40%p">

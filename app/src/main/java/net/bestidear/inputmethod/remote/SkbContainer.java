@@ -272,7 +272,7 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
         if (mSkbLayout != skbLayout) {
             mSkbLayout = skbLayout;
             updateSkbLayout();
-            islayoutSwitch=true;
+            islayoutSwitch = true;
         }
 
         mLastCandidatesShowing = false;
@@ -282,7 +282,14 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
         SoftKeyboard skb = mMajorView.getSoftKeyboard();
         if (null == skb) return;
         skb.enableToggleStates(mInputModeSwitcher.getToggleStates());
-        mSoftKeyFocus=mMajorView.getSoftKeyboard().getKey(0,0);
+        if (mSoftKeyFocus == null) {
+            mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(1, 5);
+            if(mSoftKeyFocus==null) mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(0, 0);
+        }
+        else if(mSoftKeyFocus.getKeyCode()==-3)
+        {
+            mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(3, 0);
+        }
         mMajorView.changeFocusKey(mSoftKeyFocus);
         invalidate();
         return;
@@ -349,7 +356,8 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
         if (null == majorSkb || !mMajorView.setSoftKeyboard(majorSkb)) {
             return;
         }
-        mSoftKeyFocus=mMajorView.getSoftKeyboard().getKey(0,0);
+        mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(1, 5);
+        if(mSoftKeyFocus==null) mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(0, 0);
         mMajorView.changeFocusKey(mSoftKeyFocus);
         mMajorView.setBalloonHint(mBalloonOnKey, mBalloonPopup, false);
         mMajorView.invalidate();

@@ -26,6 +26,7 @@
     <color name="composing_color_idle">#ff000000</color>
     <color name="cands_container_bgcolor">#ff000000</color>
 
+    <color name="color_null">#22000000</color>
     <color name="color_white">#ffffffff</color>
     <color name="color_black">#ff000000</color>
     <color name="color_green">#ff33ff33</color>
