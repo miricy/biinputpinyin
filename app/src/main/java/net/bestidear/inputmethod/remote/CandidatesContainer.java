@@ -239,7 +239,7 @@ public class CandidatesContainer extends RelativeLayout implements
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         if (null != mLeftArrowBtn) {
-            xOffsetForFlipper = mLeftArrowBtn.getMeasuredWidth();
+            xOffsetForFlipper = mLeftArrowBtn.getMeasuredWidth()+mLeftArrowBtn.getLeft();
         }
     }
 
