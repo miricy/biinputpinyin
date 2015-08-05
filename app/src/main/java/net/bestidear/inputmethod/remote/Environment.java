@@ -36,7 +36,7 @@ public class Environment {
     /**
      * The key height for landscape mode. It is relative to the screen height.
      */
-    private static final float KEY_HEIGHT_RATIO_LANDSCAPE = 0.108f;//0.063 0.08
+    private static final float KEY_HEIGHT_RATIO_LANDSCAPE = 0.08f;//0.063 0.08
 
     /**
      * The height of the candidates area for portrait mode. It is relative to
@@ -48,7 +48,7 @@ public class Environment {
      * The height of the candidates area for portrait mode. It is relative to
      * screen height.
      */
-    private static final float CANDIDATES_AREA_HEIGHT_RATIO_LANDSCAPE = 0.08f;//0.125f
+    private static final float CANDIDATES_AREA_HEIGHT_RATIO_LANDSCAPE = 0.06f;//0.125f
 
     /**
      * How much should the balloon width be larger than width of the real key.
