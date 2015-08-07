@@ -9,7 +9,7 @@
     repeat="false"
     balloon="false">
 
-    <row start_pos_x="16%p" start_pos_y="6%p">
+    <row start_pos_x="16%p" start_pos_y="8%p">
         <key label="" code="102" width="9%p"  icon="@drawable/ic_key_l1"  start_pos_x="1%p"/>
         <key label="~" />
         <key label="！">
