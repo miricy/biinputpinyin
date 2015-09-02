@@ -40,7 +40,7 @@
 
     </row>
 
-    <row  row_id="@string/toggle_row_cn" start_pos_x="16%p">
+    <row   start_pos_x="16%p">
 
         <key code="-3"   width="14%p" icon="@drawable/ic_key_r2sym"/>
         <keys splitter="|" labels="Z|X|C"
@@ -51,35 +51,6 @@
 
     </row>
 
-    <row  row_id="@string/toggle_row_en" start_pos_x="16%p" start_pos_y="68%p">
-        <key code="-3"  width="14%p" icon="@drawable/ic_key_r2sym"/>
-        <keys splitter="|" labels="Z|X|C"
-            codes="54|52|31"/>
-        <key code="62"  width="19%p"/>
-        <keys splitter="|" labels="V|B|N|M"
-            codes="50|30|42|41" />
 
-    </row>
-
-    <row  row_id="@string/toggle_row_uri" start_pos_x="16%p"  start_pos_y="68%p">
-        <key code="-3"  width="14%p" icon="@drawable/ic_key_r2sym"/>
-        <keys splitter="|" labels="Z|X|C"
-            codes="54|52|31"/>
-        <key code="62" width="19%p"/>
-        <keys splitter="|" labels="V|B|N|M"
-            codes="50|30|42|41" />
-
-    </row>
-
-    <row  row_id="@string/toggle_row_emailaddress" start_pos_x="16%p" start_pos_y="68%p">
-        <key code="-3" start_pos_x="0%p"
-            width="14%p" icon="@drawable/ic_key_r2sym"/>
-        <keys splitter="|" labels="Z|X|C"
-            codes="54|52|31"/>
-        <key code="62" width="19%p"/>
-        <keys splitter="|" labels="V|B|N|M"
-            codes="50|30|42|41" />
-
-    </row>
 </keyboard>
 

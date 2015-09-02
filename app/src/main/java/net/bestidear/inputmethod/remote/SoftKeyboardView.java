@@ -473,6 +473,7 @@ public class SoftKeyboardView extends View {
         String keyLabel = softKey.getKeyLabel();
         Drawable keyIcon = softKey.getKeyIcon();
         if (null != keyIcon) {
+            int i=0;
             Drawable icon = keyIcon;
             int marginLeft = (softKey.width() - icon.getIntrinsicWidth()) / 2;
             int marginRight = softKey.width() - icon.getIntrinsicWidth()

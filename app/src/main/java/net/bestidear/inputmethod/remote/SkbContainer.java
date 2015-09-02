@@ -740,11 +740,12 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
                 mSoftKeyFocus = skb.getKey(3, 4);
                 mMajorView.changeFocusKey(mSoftKeyFocus);
                 break;
-            case KeyEvent.KEYCODE_BUTTON_SELECT:
+            case KeyEvent.KEYCODE_BUTTON_THUMBL:
                 mSoftKeyFocus = skb.getKey(2, 0);
                 mMajorView.changeFocusKey(mSoftKeyFocus);
                 break;
         }
+        mMajorView.invalidate();
         return mSoftKeyFocus;
 
     }

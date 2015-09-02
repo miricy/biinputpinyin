@@ -378,7 +378,7 @@ public class RemoteIME extends InputMethodService {
         }
 
         if (keyCode == KeyEvent.KEYCODE_BUTTON_L2 || keyCode== KeyEvent.KEYCODE_BUTTON_R2 ||
-                keyCode==KeyEvent.KEYCODE_BUTTON_Y || keyCode==KeyEvent.KEYCODE_BUTTON_SELECT ) {
+                 keyCode==KeyEvent.KEYCODE_BUTTON_THUMBL ) {
             if (!realAction) return true;
 
             SoftKey key = mSkbContainer.setKeyFocus(keyCode);
@@ -534,8 +534,8 @@ public class RemoteIME extends InputMethodService {
             }
             if (keyCode == KeyEvent.KEYCODE_SPACE  || keyCode == KeyEvent.KEYCODE_BUTTON_Y) {
                 if (!realAction) return true;
-                mSkbContainer.setKeyFocus(KeyEvent.KEYCODE_BUTTON_Y);
                 sendKeyChar(' ');
+                mSkbContainer.setKeyFocus(KeyEvent.KEYCODE_BUTTON_Y);
                 return true;
             }
         }
