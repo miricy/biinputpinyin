@@ -744,6 +744,11 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
                 mSoftKeyFocus = skb.getKey(2, 0);
                 mMajorView.changeFocusKey(mSoftKeyFocus);
                 break;
+            case KeyEvent.KEYCODE_BUTTON_START:
+                mSoftKeyFocus = skb.getKey(2, 10);
+                if(mSoftKeyFocus==null) skb.getKey(3,2);
+                mMajorView.changeFocusKey(mSoftKeyFocus);
+                break;
         }
         mMajorView.invalidate();
         return mSoftKeyFocus;
@@ -761,7 +766,7 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
             return null;
         }
         
-        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
+        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_BUTTON_A) {
             return mSoftKeyFocus;
         }
         else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
