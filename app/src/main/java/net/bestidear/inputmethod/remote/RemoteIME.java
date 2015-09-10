@@ -378,7 +378,8 @@ public class RemoteIME extends InputMethodService {
         }
 
         if (keyCode == KeyEvent.KEYCODE_BUTTON_L2 || keyCode== KeyEvent.KEYCODE_BUTTON_R2 ||
-                 keyCode==KeyEvent.KEYCODE_BUTTON_THUMBL ) {
+            keyCode==KeyEvent.KEYCODE_BUTTON_THUMBL || keyCode==KeyEvent.KEYCODE_BUTTON_Y ||
+                keyCode==KeyEvent.KEYCODE_BUTTON_X) {
             if (!realAction) return true;
 
             SoftKey key = mSkbContainer.setKeyFocus(keyCode);
@@ -444,7 +445,7 @@ public class RemoteIME extends InputMethodService {
     // keyCode can be from both hard key or soft key.
     private boolean processFunctionKeys(int keyCode, boolean realAction) {
         // Back key is used to dismiss all popup UI in a soft keyboard.
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
+        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode== KeyEvent.KEYCODE_BUTTON_B) {
             if (isInputViewShown()) {
                 mSkbContainer.clearKeyFocus();
                 if (mSkbContainer.handleBack(realAction)) return true;
@@ -471,8 +472,54 @@ public class RemoteIME extends InputMethodService {
         if (keyCode == KeyEvent.KEYCODE_BUTTON_START) {
             if (!realAction) return true;
             mSkbContainer.setKeyFocus(keyCode);
-            simulateKeyEventDownUp(KeyEvent.KEYCODE_ENTER);
+//            simulateKeyEventDownUp(KeyEvent.KEYCODE_ENTER);
 
+            return false;
+        }
+
+        if (keyCode == KeyEvent.KEYCODE_BUTTON_X) {
+            if (!realAction) return true;
+            SoftKey key=mSkbContainer.setKeyFocus(keyCode);
+            if (key != null) {
+                int funKeyCode=key.getKeyCode();
+                KeyEvent eDown = new KeyEvent(0, 0, KeyEvent.ACTION_DOWN,
+                        funKeyCode, 0, 0, 0, 0, KeyEvent.FLAG_SOFT_KEYBOARD);
+                KeyEvent eUp = new KeyEvent(0, 0, KeyEvent.ACTION_UP, funKeyCode,
+                        0, 0, 0, 0, KeyEvent.FLAG_SOFT_KEYBOARD);
+
+                onKeyDown(funKeyCode, eDown);
+                onKeyUp(funKeyCode, eUp);
+                return true;
+            }
+
+            return true;
+        }
+
+        if (keyCode == KeyEvent.KEYCODE_BUTTON_Y) {
+            if (!realAction) return true;
+            mSkbContainer.setKeyFocus(keyCode);
+            simulateKeyEventDownUp(KeyEvent.KEYCODE_SPACE);
+
+            return true;
+        }
+
+//        if (keyCode == KeyEvent.KEYCODE_BUTTON_A) {
+//            if (!realAction) return true;
+//            simulateKeyEventDownUp(KeyEvent.KEYCODE_DPAD_CENTER);
+//
+//            return true;
+//        }
+//
+//        if (keyCode == KeyEvent.KEYCODE_BUTTON_B) {
+//            if (!realAction) return true;
+//            simulateKeyEventDownUp(KeyEvent.KEYCODE_BACK);
+//
+//            return true;
+//        }
+
+        if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN && !mSkbContainer.hasFocus()) {
+            if (!realAction) return true;
+            mSkbContainer.requestFocus();
             return true;
         }
 
@@ -698,7 +745,7 @@ public class RemoteIME extends InputMethodService {
             if (!realAction) return true;
             chooseCandidate(-1);
             return true;
-        } else if (keyCode == KeyEvent.KEYCODE_BACK) {
+        } else if (keyCode == KeyEvent.KEYCODE_BACK || keyCode== KeyEvent.KEYCODE_BUTTON_B) {
             if (!realAction) return true;
             resetToIdleState(false);
             requestHideSelf(0);
@@ -750,7 +797,7 @@ public class RemoteIME extends InputMethodService {
             }
         } else if (keyCode == KeyEvent.KEYCODE_DEL || keyCode == KeyEvent.KEYCODE_BUTTON_X) {
             resetToIdleState(false);
-        } else if (keyCode == KeyEvent.KEYCODE_BACK) {
+        } else if (keyCode == KeyEvent.KEYCODE_BACK || keyCode== KeyEvent.KEYCODE_BUTTON_B) {
             resetToIdleState(false);
             requestHideSelf(0);
         } 
@@ -841,7 +888,7 @@ public class RemoteIME extends InputMethodService {
             commitResultText(retStr);
             sendKeyChar('\n');
             resetToIdleState(false);
-        } else if (keyCode == KeyEvent.KEYCODE_BACK) {
+        } else if (keyCode == KeyEvent.KEYCODE_BACK || keyCode== KeyEvent.KEYCODE_BUTTON_B) {
             resetToIdleState(false);
             requestHideSelf(0);
             return true;
@@ -1303,6 +1350,7 @@ public class RemoteIME extends InputMethodService {
         if (mEnvironment.needDebug()) {
             Log.d(TAG, "onFinishInputView.");
         }
+        mSkbContainer.clearKeyFocus();
         resetToIdleState(false);
         super.onFinishInputView(finishingInput);
     }

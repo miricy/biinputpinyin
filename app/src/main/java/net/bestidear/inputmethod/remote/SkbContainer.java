@@ -705,52 +705,100 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
         }
     }
 
+    public SoftKey flushKeyFocus(int keyCode)
+    {
+        SoftKeyboard skb = mMajorView.getSoftKeyboard();
+        if (null == skb) return null;
+        SoftKey sKey=null;
+
+        switch(keyCode)
+        {
+            case KeyEvent.KEYCODE_BUTTON_L1:
+                sKey = skb.getKey(0, 0);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_R1:
+                sKey = skb.getKey(0, 11);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_L2:
+                sKey = skb.getKey(1, 0);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_R2:
+                sKey = skb.getKey(3, 0);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_X:
+                sKey = skb.getKey(1, 11);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_Y:
+                sKey = skb.getKey(3, 4);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_THUMBL:
+                sKey = skb.getKey(2, 0);
+                break;
+            case KeyEvent.KEYCODE_BUTTON_START:
+                sKey = skb.getKey(2, 10);
+                if(sKey==null) sKey=skb.getKey(3,1);
+                break;
+        }
+
+        if(!this.hasFocus()){
+            Log.d("SoftKeyboard", "keyboard no focus");
+            return sKey;
+        }
+        if(sKey!=null)
+        {
+            SoftKey oldKey=mSoftKeyFocus;
+            mMajorView.changeFocusKey(sKey);
+            mSoftKeyFocus=oldKey;
+        }
+
+        return mSoftKeyFocus;
+
+    }
+
     public SoftKey setKeyFocus(int keyCode)
     {
         SoftKeyboard skb = mMajorView.getSoftKeyboard();
         if (null == skb) return null;
+        SoftKey sKey=null;
 
-        if(!this.hasFocus()){
-            Log.d("SoftKeyboard", "keyboard no focus");
-            return null;
-        }
         switch(keyCode)
         {
             case KeyEvent.KEYCODE_BUTTON_L1:
-                mSoftKeyFocus = skb.getKey(0, 0);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(0, 0);
                 break;
             case KeyEvent.KEYCODE_BUTTON_R1:
-                mSoftKeyFocus = skb.getKey(0, 11);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(0, 11);
                 break;
             case KeyEvent.KEYCODE_BUTTON_L2:
-                mSoftKeyFocus = skb.getKey(1, 0);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(1, 0);
                 break;
             case KeyEvent.KEYCODE_BUTTON_R2:
-                mSoftKeyFocus = skb.getKey(3, 0);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(3, 0);
                 break;
             case KeyEvent.KEYCODE_BUTTON_X:
-                mSoftKeyFocus = skb.getKey(1, 11);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(1, 11);
                 break;
             case KeyEvent.KEYCODE_BUTTON_Y:
-                mSoftKeyFocus = skb.getKey(3, 4);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(3, 4);
                 break;
             case KeyEvent.KEYCODE_BUTTON_THUMBL:
-                mSoftKeyFocus = skb.getKey(2, 0);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(2, 0);
                 break;
             case KeyEvent.KEYCODE_BUTTON_START:
-                mSoftKeyFocus = skb.getKey(2, 10);
-                if(mSoftKeyFocus==null) skb.getKey(3,2);
-                mMajorView.changeFocusKey(mSoftKeyFocus);
+                sKey = skb.getKey(2, 10);
+                if(sKey==null) sKey=skb.getKey(3,1);
                 break;
         }
-        mMajorView.invalidate();
+
+        if(!this.hasFocus()){
+            Log.d("SoftKeyboard", "keyboard no focus");
+            return sKey;
+        }
+        if(sKey!=null)
+        {
+            mSoftKeyFocus=sKey;
+            mMajorView.changeFocusKey(mSoftKeyFocus);
+        }
         return mSoftKeyFocus;
 
     }
