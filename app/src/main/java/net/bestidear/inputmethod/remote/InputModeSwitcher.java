@@ -527,7 +527,6 @@ public class InputModeSwitcher {
         mShortMessageField = false;
         boolean english = false;
         int newInputMode = MODE_HKB_ENGLISH;
-
         if ((mRecentLauageInputMode & MASK_LANGUAGE) == MASK_LANGUAGE_CN) {
             newInputMode = MODE_HKB_CHINESE;
         } else {

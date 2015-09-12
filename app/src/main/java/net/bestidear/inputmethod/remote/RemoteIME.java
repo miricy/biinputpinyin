@@ -452,6 +452,18 @@ public class RemoteIME extends InputMethodService {
             }
         }
 
+        if(keyCode==KeyEvent.KEYCODE_DPAD_DOWN || keyCode==KeyEvent.KEYCODE_BUTTON_THUMBL ||
+                keyCode==KeyEvent.KEYCODE_BUTTON_L2 || keyCode==KeyEvent.KEYCODE_BUTTON_R2)
+            if (!mSkbContainer.hasFocus() && isInputViewShown()) {
+                if (!realAction) return true;
+                mSkbContainer.requestFocus();
+                SoftKey key = mSkbContainer.setKeyFocus(keyCode);
+                if (key != null) {
+                    responseSoftKeyEvent(key);
+                    return true;
+                }
+            }//add by alva
+
         if (keyCode == KeyEvent.KEYCODE_BUTTON_L1) {
             if (!realAction) return true;
             mSkbContainer.setKeyFocus(keyCode);
@@ -517,11 +529,6 @@ public class RemoteIME extends InputMethodService {
 //            return true;
 //        }
 
-        if (keyCode == KeyEvent.KEYCODE_DPAD_DOWN && !mSkbContainer.hasFocus()) {
-            if (!realAction) return true;
-            mSkbContainer.requestFocus();
-            return true;
-        }
 
         // Chinese related input is handle separately.
         if (mInputModeSwitcher.isChineseText()) {
@@ -942,7 +949,7 @@ public class RemoteIME extends InputMethodService {
     }
 
     private boolean processSurfaceChange(int keyChar, int keyCode) {
-        if (mDecInfo.isSplStrFull() && (KeyEvent.KEYCODE_DEL != keyCode && keyCode != KeyEvent.KEYCODE_BUTTON_X)) {
+        if (mDecInfo.isSplStrFull() && (KeyEvent.KEYCODE_DEL != keyCode || keyCode != KeyEvent.KEYCODE_BUTTON_X)) {
             return true;
         }
 
@@ -1970,6 +1977,7 @@ public class RemoteIME extends InputMethodService {
             mPageStart.add(0);
             mCnToPage.clear();
             mCnToPage.add(0);
+            dismissCandidateWindow();
         }
 
         public boolean candidatesFromApp() {
