@@ -478,6 +478,7 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         super.onTouchEvent(event);
@@ -777,6 +778,7 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
                 break;
             case KeyEvent.KEYCODE_BUTTON_X:
                 sKey = skb.getKey(1, 11);
+                if(sKey==null) sKey=skb.getKey(3,0);//alva fix number del key
                 break;
             case KeyEvent.KEYCODE_BUTTON_Y:
                 sKey = skb.getKey(3, 4);

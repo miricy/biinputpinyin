@@ -34,6 +34,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.GestureDetector;
+import android.view.InputDevice;
 import android.view.LayoutInflater;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -452,7 +453,7 @@ public class RemoteIME extends InputMethodService {
             }
         }
 
-        if(keyCode==KeyEvent.KEYCODE_DPAD_DOWN || keyCode==KeyEvent.KEYCODE_BUTTON_THUMBL ||
+        if( keyCode==KeyEvent.KEYCODE_BUTTON_THUMBL ||
                 keyCode==KeyEvent.KEYCODE_BUTTON_L2 || keyCode==KeyEvent.KEYCODE_BUTTON_R2)
             if (!mSkbContainer.hasFocus() && isInputViewShown()) {
                 if (!realAction) return true;
@@ -1501,6 +1502,42 @@ public class RemoteIME extends InputMethodService {
         }
     }
 
+    @Override
+    public boolean onGenericMotionEvent(MotionEvent event) {
+        if (event.getAction()==2 && (event.getDevice().getSources() & InputDevice.SOURCE_CLASS_JOYSTICK) != 0) {
+            float lTrigger=event.getAxisValue(MotionEvent.AXIS_LTRIGGER);
+            float rTrigger=event.getAxisValue(MotionEvent.AXIS_RTRIGGER);
+            if(lTrigger==1.0f)
+            {
+                SoftKey key=mSkbContainer.setKeyFocus(KeyEvent.KEYCODE_BUTTON_L2);
+                if (key != null) {
+                    //          if(key.getKeyCode()==KeyEvent.KEYCODE_ENTER)
+                    //              return false;
+                    responseSoftKeyEvent(key);
+                    return true;
+                }
+            }
+            if(rTrigger==1.0f)
+            {
+                SoftKey key=mSkbContainer.setKeyFocus(KeyEvent.KEYCODE_BUTTON_R2);
+                if (key != null) {
+                    //          if(key.getKeyCode()==KeyEvent.KEYCODE_ENTER)
+                    //              return false;
+                    responseSoftKeyEvent(key);
+                    return true;
+                }
+            }
+            Log.d("RemoteIME", "onGenericMotionEvent LTRIGGER: " + event.getAxisValue(MotionEvent.AXIS_LTRIGGER));
+            Log.d("RemoteIME", "onGenericMotionEvent RTRIGGER: " + event.getAxisValue(MotionEvent.AXIS_RTRIGGER));
+            Log.d("RemoteIME", "onGenericMotionEvent Action: " + event.getAction());//action 2
+            Log.d("RemoteIME", "onGenericMotionEvent ButtonState: " + event.getButtonState());
+            Log.d("RemoteIME", "onGenericMotionEvent getMetaState: " + event.getMetaState());
+            Log.d("RemoteIME", "onGenericMotionEvent getToolType: " + event.getToolType(0));event.getDevice().getMotionRange(1);
+        }
+        return  super.onGenericMotionEvent(event);
+    }
+
+
     /**
      * Used to notify IME that the user selects a candidate or performs an
      * gesture.
@@ -1605,6 +1642,7 @@ public class RemoteIME extends InputMethodService {
 
         @Override
         public boolean onDown(MotionEvent e) {
+
             mMinVelocityX = Integer.MAX_VALUE;
             mMinVelocityY = Integer.MAX_VALUE;
             mTimeDown = e.getEventTime();
@@ -1977,7 +2015,8 @@ public class RemoteIME extends InputMethodService {
             mPageStart.add(0);
             mCnToPage.clear();
             mCnToPage.add(0);
-            dismissCandidateWindow();
+//            dismissCandidateWindow(); //add by alva
+            if(null != mCandidatesContainer && mCandidatesContainer.isShown() && mComposingStr.length() <=0 && mDecInfo.isCandidatesListEmpty()) dismissCandidateWindow();//add by alva
         }
 
         public boolean candidatesFromApp() {
