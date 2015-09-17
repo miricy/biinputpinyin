@@ -110,7 +110,7 @@ public class ComposingView extends View {
         super(context, attrs);
 
         Resources r = context.getResources();
-        mHlDrawable = r.getDrawable(R.drawable.composing_hl_bg);
+        mHlDrawable = r.getDrawable(R.color.color_focus);//R.drawable.composing_hl_bg replaced by alva
         mCursor = r.getDrawable(R.drawable.composing_area_cursor);
 
         mStrColor = r.getColor(R.color.composing_color);

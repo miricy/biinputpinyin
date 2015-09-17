@@ -13,6 +13,7 @@
     <color name="color_focus">#ff01a61b</color>
     <color name="color_green">#ff33ff33</color>
     <color name="color_normal">#ff3f3f42</color>
+    <color name="color_null">#22000000</color>
     <color name="color_white">#ffffffff</color>
     <color name="composing_color">#ffffffff</color>
     <color name="composing_color_hl">#ffffffff</color>

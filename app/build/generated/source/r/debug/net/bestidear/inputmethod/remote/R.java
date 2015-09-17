@@ -23,14 +23,15 @@ public final class R {
         public static final int color_focus=0x7f090005;
         public static final int color_green=0x7f090006;
         public static final int color_normal=0x7f090007;
-        public static final int color_white=0x7f090008;
-        public static final int composing_color=0x7f090009;
-        public static final int composing_color_hl=0x7f09000a;
-        public static final int composing_color_idle=0x7f09000b;
-        public static final int footnote_color=0x7f09000c;
-        public static final int label_color=0x7f09000d;
-        public static final int label_color_hl0=0x7f09000e;
-        public static final int recommended_candidate_color=0x7f09000f;
+        public static final int color_null=0x7f090008;
+        public static final int color_white=0x7f090009;
+        public static final int composing_color=0x7f09000a;
+        public static final int composing_color_hl=0x7f09000b;
+        public static final int composing_color_idle=0x7f09000c;
+        public static final int footnote_color=0x7f09000d;
+        public static final int label_color=0x7f09000e;
+        public static final int label_color_hl0=0x7f09000f;
+        public static final int recommended_candidate_color=0x7f090010;
     }
     public static final class dimen {
         public static final int candidate_margin_left_right=0x7f070000;
