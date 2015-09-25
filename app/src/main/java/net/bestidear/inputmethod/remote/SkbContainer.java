@@ -820,7 +820,7 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
             return mSoftKeyFocus;
         }
         else if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) {
-            if(mSoftKeyFocus==null)
+          /*  if(mSoftKeyFocus==null)
                 mSoftKeyFocus=skb.getKey(0,-1);     
             else{
                 int row = mSoftKeyFocus.mRow;
@@ -840,18 +840,19 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
                 }           
                 mSoftKeyFocus = skb.getKey(row,loc);
             } //*/
-            /*
+            //*
             if(mSoftKeyFocus==null)             
                 mSoftKeyFocus=skb.getKey(0,0);
             else
             {
-                int x = mSoftKeyFocus.mLeft-skb.getKeyXMargin()-10;
-                int y = mSoftKeyFocus.mTop+mSoftKeyFocus.height()/2;
-                mSoftKeyFocus = skb.mapToKey(x,y);
+                int row = mSoftKeyFocus.mRow;
+                int loc = mSoftKeyFocus.mLocation-1;
+                if(loc<0) loc=0;
+                mSoftKeyFocus = skb.getKey(row, loc);
             }//*/
         }
         else if (keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
-            if(mSoftKeyFocus==null)
+           /* if(mSoftKeyFocus==null)
                 mSoftKeyFocus=skb.getKey(0,0);      
             else{
                 int row = mSoftKeyFocus.mRow;
@@ -870,14 +871,17 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
                         mSoftKeyFocus = skb.getKey(row, loc);
                 }                           
             }//*/
-            /*
+            //*
             if(mSoftKeyFocus==null)             
                 mSoftKeyFocus=skb.getKey(0,0);
             else
             {
-                int x = mSoftKeyFocus.mRight+skb.getKeyXMargin();
-                int y = mSoftKeyFocus.mTop+mSoftKeyFocus.height()/2;
-                mSoftKeyFocus = skb.mapToKey(x,y);
+                int row = mSoftKeyFocus.mRow;
+                int loc = mSoftKeyFocus.mLocation;
+                mSoftKeyFocus = skb.getKey(row,loc+1);
+                if(mSoftKeyFocus==null){
+                    mSoftKeyFocus = skb.getKey(row,loc);
+                }
             }//*/
                 
         }
