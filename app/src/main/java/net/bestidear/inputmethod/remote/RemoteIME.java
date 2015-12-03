@@ -950,7 +950,7 @@ public class RemoteIME extends InputMethodService {
     }
 
     private boolean processSurfaceChange(int keyChar, int keyCode) {
-        if (mDecInfo.isSplStrFull() && (KeyEvent.KEYCODE_DEL != keyCode || keyCode != KeyEvent.KEYCODE_BUTTON_X)) {
+        if (mDecInfo.isSplStrFull() && (KeyEvent.KEYCODE_DEL != keyCode && keyCode != KeyEvent.KEYCODE_BUTTON_X)) {
             return true;
         }
 
