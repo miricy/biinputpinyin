@@ -356,11 +356,11 @@ public class SkbContainer extends RelativeLayout implements OnTouchListener {
         if (null == majorSkb || !mMajorView.setSoftKeyboard(majorSkb)) {
             return;
         }
-        mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(1, 5);
-        if(mSoftKeyFocus==null) mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(0, 0);
-        mMajorView.changeFocusKey(mSoftKeyFocus);
-        mMajorView.setBalloonHint(mBalloonOnKey, mBalloonPopup, false);
-        mMajorView.invalidate();
+//        mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(1, 5);
+//        if(mSoftKeyFocus==null) mSoftKeyFocus = mMajorView.getSoftKeyboard().getKey(0, 0);
+//        mMajorView.changeFocusKey(mSoftKeyFocus);
+//        mMajorView.setBalloonHint(mBalloonOnKey, mBalloonPopup, false);
+//        mMajorView.invalidate();
     }
 
     private void responseKeyEvent(SoftKey sKey) {
